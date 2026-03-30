@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>Hospital Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="title">Hospital Appointment System</h1>
+        <form id="appointmentForm" onsubmit="return submitForm()">
+            <label>Patient Name</label>
+            <input type="text" id="name" placeholder="Enter patient name" onkeyup="validateName()">
+            <span id="nameError"></span>
+            <label>Email</label>
+            <input type="text" id="email" placeholder="Enter email" onkeyup="validateEmail()">
+            <span id="emailError"></span>
+            <label>Age</label>
+            <input type="number" id="age" placeholder="Enter age" onkeyup="validateAge()">
+            <span id="ageError"></span>
+            <label>Select Doctor</label>
+            <select id="doctor" onchange="calculateFees()">
+
+                <option value="">Select Doctor</option>
+                <option value="500">General Physician (₹500)</option>
+                <option value="800">Cardiologist (₹800)</option>
+                <option value="700">Dermatologist (₹700)</option>
+            </select>
+            <label>Appointment Date</label>
+            <input type="date" id="date">
+            <label>Consultation Fees</label>
+            <input type="text" id="fees" readonly>
+            <br>
+            <button type="submit">Book Appointment</button>
+            <button type="button" onclick="clearForm()">Clear</button>
+        </form>
+        <div id="message"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
